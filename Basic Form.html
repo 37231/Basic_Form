@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Html Form</title>
+    <style>
+        html {
+            background: lightgrey;
+        }
+
+        #Form1 {
+            padding-top: 0;
+            padding-bottom: 2%;
+            text-align: center;
+            background-color: lightskyblue;
+            width: 40%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        input {
+            width: 20%;
+            height: 20px;
+            margin-top: 5%;
+            margin-left: 5%;
+            margin-right: 5%;
+            padding: 2px;
+            border-color: black;
+            border-width: 2px;
+            text-align: center;
+        }
+        button {
+            margin-top: 5%;
+            width: 100px;
+            height: 30px;
+            background: limegreen;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Div1">
+        <form id="Form1" onsubmit="run(); return false;">
+            <h1>Basic Form</h1>
+                <input id="FirstName" type="text" placeholder="First Name">
+                    <input id="LastName" type="text" placeholder="Last Name">
+                        <br>
+                    <input id="Gender" type="text" placeholder="Gender">
+                <input id="DOB" type="text" placeholder="Date of Birth">
+              <br>
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="Message">
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    let Fname, Lname, Gender, DOB, message;
+    function input() {
+        Fname = document.getElementById('FirstName').value;
+        Lname = document.getElementById('LastName').value;
+        Gender = document.getElementById('Gender').value;
+        DOB = document.getElementById('DOB').value;
+    }
+
+    function process() {
+        message = 'Welcome ' + Fname + ' ' + Lname + ". Your Gender is " + Gender + " and your Date of birth is " + DOB;
+    }
+
+    function output() {
+        document.getElementById('Message').innerText = message;
+    }
+function run() {
+    input();
+    process();
+    output();
+}
+
+</script>
